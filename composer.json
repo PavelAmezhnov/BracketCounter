@@ -1,0 +1,17 @@
+{
+    "name": "pavel-mezhnov/bracket-counter",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "BracketCounter\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Pavel Amezhnov",
+            "email": "pavel.amezhnov@gmail.com"
+        }
+    ],
+    "require": {}
+}
