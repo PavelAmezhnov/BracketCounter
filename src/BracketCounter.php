@@ -17,10 +17,10 @@ class BracketCounter
             }
 
             switch ($char) {
-                case CharsEnum::LEFT_BRACKET:
+                case CharsEnum::LEFT_BRACKET->value:
                     $leftBracketCounter++;
                     break;
-                case CharsEnum::RIGHT_BRACKET:
+                case CharsEnum::RIGHT_BRACKET->value:
                     $rightBracketCounter++;
                     break;
             }
