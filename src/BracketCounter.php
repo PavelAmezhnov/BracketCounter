@@ -12,15 +12,15 @@ class BracketCounter
         $leftBracketCounter = $rightBracketCounter = 0;
 
         foreach (str_split($input) as $char) {
-            if (!in_array($char, ["(", ")", "\t", "\n", "\r"], true)) {
+            if (CharsEnum::tryFrom($char) === null) {
                 throw new InvalidArgumentException('Found a wrong char in a string');
             }
 
             switch ($char) {
-                case "(":
+                case CharsEnum::LEFT_BRACKET:
                     $leftBracketCounter++;
                     break;
-                case ")":
+                case CharsEnum::RIGHT_BRACKET:
                     $rightBracketCounter++;
                     break;
             }
@@ -30,7 +30,7 @@ class BracketCounter
             }
         }
 
-        if ($leftBracketCounter === 0 || $rightBracketCounter === 0 || $rightBracketCounter <> $leftBracketCounter) {
+        if ($leftBracketCounter === 0 || $rightBracketCounter === 0 || $rightBracketCounter !== $leftBracketCounter) {
             return false;
         }
 
